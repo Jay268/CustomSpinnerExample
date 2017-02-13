@@ -9,7 +9,7 @@ import android.widget.ArrayAdapter;
 public class SpinnerAdapter extends ArrayAdapter<String> {
 
     public SpinnerAdapter(Context context, String[] items) {
-        super(context, android.R.layout.simple_spinner_item, items);
+        super(context, R.layout.spinner_item, items);
         setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
     }
 }
