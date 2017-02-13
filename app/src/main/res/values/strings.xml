@@ -1,5 +1,9 @@
 <resources>
-    <string name="app_name">CustomSpinnerExample</string>
+    <string name="app_name">Custom Spinner</string>
+
+    <string name="validate">Validate</string>
+    <string name="error_select_item">Select item!</string>
+    <string name="error_enter_text">Enter text!</string>
 
     <array name="spinner_items">
         <item>One</item>
