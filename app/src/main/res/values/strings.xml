@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">CustomSpinnerExample</string>
+
+    <array name="spinner_items">
+        <item>One</item>
+        <item>Two</item>
+        <item>Three</item>
+        <item>Four</item>
+        <item>Five</item>
+    </array>
 </resources>
