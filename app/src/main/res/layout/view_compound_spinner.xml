@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border"
+        android:visibility="invisible"/>
+
+    <com.ysered.customspinnerexample.view.SpinnerEditText
+        android:id="@+id/spinnerEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:drawableRight="@drawable/ic_arrow_drop_down"
+        android:maxLines="1"
+        android:padding="@dimen/margin_default"
+        android:visibility="invisible"/>
+
+    <TextView
+        android:id="@+id/placeholderText"
+        style="?android:attr/spinnerItemStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_border"
+        android:drawableEnd="@drawable/ic_arrow_drop_down"
+        android:drawableRight="@drawable/ic_arrow_drop_down"
+        android:maxLines="1"
+        android:padding="@dimen/margin_default"/>
+
+</FrameLayout>
