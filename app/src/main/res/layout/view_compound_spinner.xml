@@ -11,8 +11,8 @@
         android:background="@drawable/shape_border"
         android:visibility="invisible"/>
 
-    <com.ysered.customspinnerexample.view.SpinnerEditText
-        android:id="@+id/spinnerEditText"
+    <EditText
+        android:id="@+id/customText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_border"
