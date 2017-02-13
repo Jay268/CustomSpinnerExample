@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
+import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.ysered.customspinnerexample.R;
@@ -38,9 +39,13 @@ public class CompoundSpinner extends FrameLayout {
         init();
     }
 
+    public void setAdapter(SpinnerAdapter adapter) {
+        spinner.setAdapter(adapter);
+    }
+
     public String getSelectedItemText() {
         String text = null;
-        final boolean isPlaceholderShown = placeholderText.getVisibility() != VISIBLE;
+        final boolean isPlaceholderShown = placeholderText.getVisibility() == VISIBLE;
         if (!isPlaceholderShown && customText.getVisibility() == VISIBLE) {
             text = customText.getText().toString();
         } else if (!isPlaceholderShown && spinner.getVisibility() == VISIBLE) {
