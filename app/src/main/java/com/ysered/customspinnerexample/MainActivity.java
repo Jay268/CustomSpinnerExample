@@ -18,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
 
         spinner = (Spinner) findViewById(R.id.spinner);
         final String[] items = getResources().getStringArray(R.array.spinner_items);
-        spinner.setAdapter(new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, items));
+        final SpinnerAdapter adapter = new SpinnerAdapter(this, items);
+        spinner.setAdapter(adapter);
     }
 }
