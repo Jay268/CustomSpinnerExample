@@ -117,7 +117,7 @@ public class CompoundSpinner extends FrameLayout {
                 items.add(textItem.toString());
             }
         } else {
-            throw new IllegalArgumentException("Spinner items not specified: android:entries attribute");
+            throw new IllegalArgumentException("Spinner items not specified: declare 'android:entries' attribute");
         }
         spinner.setAdapter(new SpinnerAdapter(getContext(), items));
         typedArray.recycle();
