@@ -6,10 +6,10 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.FrameLayout;
 import android.widget.Spinner;
-import android.widget.SpinnerAdapter;
 import android.widget.TextView;
 
 import com.ysered.customspinnerexample.R;
@@ -39,10 +39,6 @@ public class CompoundSpinner extends FrameLayout {
         init();
     }
 
-    public void setAdapter(SpinnerAdapter adapter) {
-        spinner.setAdapter(adapter);
-    }
-
     public String getSelectedItemText() {
         String text = null;
         final boolean isPlaceholderShown = placeholderText.getVisibility() == VISIBLE;
@@ -59,6 +55,8 @@ public class CompoundSpinner extends FrameLayout {
         placeholderText = (TextView) view.findViewById(R.id.placeholderText);
         spinner = (Spinner) view.findViewById(R.id.spinner);
         customText = (EditText) view.findViewById(R.id.customText);
+
+        spinner.setAdapter(new SpinnerAdapter(getContext(), getResources().getStringArray(R.array.spinner_items)));
 
         // hide placeholder text and show spinner items
         placeholderText.setOnClickListener(new OnClickListener() {
@@ -105,4 +103,13 @@ public class CompoundSpinner extends FrameLayout {
             }
         });
     }
+
+    private final class SpinnerAdapter extends ArrayAdapter<String> {
+
+        public SpinnerAdapter(Context context, String[] items) {
+            super(context, R.layout.spinner_item, items);
+            setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        }
+    }
+
 }

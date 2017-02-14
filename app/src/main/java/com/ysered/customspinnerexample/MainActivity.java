@@ -26,10 +26,6 @@ public class MainActivity extends AppCompatActivity {
         errorsText = (TextView) findViewById(R.id.errorsText);
         validateButton = (Button) findViewById(R.id.validateButton);
 
-        final String[] items = getResources().getStringArray(R.array.spinner_items);
-        final SpinnerAdapter adapter = new SpinnerAdapter(this, items);
-        spinner.setAdapter(adapter);
-
         validateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
