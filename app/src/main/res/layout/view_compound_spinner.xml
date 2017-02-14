@@ -20,6 +20,7 @@
         android:drawableRight="@drawable/ic_expand_more"
         android:maxLines="1"
         android:padding="@dimen/margin_default"
+        android:textSize="@dimen/text_size_15"
         android:visibility="invisible"/>
 
     <TextView

@@ -1,3 +1,4 @@
 <resources>
     <dimen name="margin_default">16dp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
 </resources>
