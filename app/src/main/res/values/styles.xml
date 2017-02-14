@@ -6,4 +6,11 @@
         <item name="colorAccent">@color/color_accent</item>
     </style>
 
+    <style name="SpinnerItemStyle">
+        <item name="android:textColor">@color/color_black</item>
+        <item name="android:textSize">@dimen/text_size_15</item>
+        <item name="android:padding">@dimen/margin_default</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
 </resources>

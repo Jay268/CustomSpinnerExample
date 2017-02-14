@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="CompoundSpinner">
         <attr name="android:entries"/>
+        <attr name="placeholder_text" format="string"/>
     </declare-styleable>
 </resources>

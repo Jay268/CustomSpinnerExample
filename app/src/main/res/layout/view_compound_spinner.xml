@@ -13,25 +13,22 @@
 
     <EditText
         android:id="@+id/customText"
+        style="@style/SpinnerItemStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_border"
         android:drawableEnd="@drawable/ic_expand_more"
         android:drawableRight="@drawable/ic_expand_more"
-        android:maxLines="1"
-        android:padding="@dimen/margin_default"
-        android:textSize="@dimen/text_size_15"
         android:visibility="invisible"/>
 
     <TextView
         android:id="@+id/placeholderText"
-        style="?android:attr/spinnerItemStyle"
+        style="@style/SpinnerItemStyle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/shape_border"
         android:drawableEnd="@drawable/ic_expand_more"
         android:drawableRight="@drawable/ic_expand_more"
-        android:maxLines="1"
-        android:padding="@dimen/margin_default"/>
+        android:text="@null"/>
 
 </FrameLayout>

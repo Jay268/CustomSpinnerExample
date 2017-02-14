@@ -120,6 +120,10 @@ public class CompoundSpinner extends FrameLayout {
             throw new IllegalArgumentException("Spinner items not specified: declare 'android:entries' attribute");
         }
         spinner.setAdapter(new SpinnerAdapter(getContext(), items));
+        final String placeholder = typedArray.getString(R.styleable.CompoundSpinner_placeholder_text);
+        if (placeholder != null) {
+            placeholderText.setText(placeholder);
+        }
         typedArray.recycle();
     }
 
