@@ -1,6 +1,7 @@
 package com.ysered.customspinnerexample.view;
 
 import android.content.Context;
+import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -13,6 +14,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.ysered.customspinnerexample.R;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class CompoundSpinner extends FrameLayout {
     private static final String TAG = CompoundSpinner.class.getSimpleName();
@@ -32,11 +36,13 @@ public class CompoundSpinner extends FrameLayout {
     public CompoundSpinner(Context context, AttributeSet attrs) {
         super(context, attrs);
         init();
+        applyAttributes(attrs);
     }
 
     public CompoundSpinner(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init();
+        applyAttributes(attrs);
     }
 
     public String getSelectedItemText() {
@@ -55,8 +61,6 @@ public class CompoundSpinner extends FrameLayout {
         placeholderText = (TextView) view.findViewById(R.id.placeholderText);
         spinner = (Spinner) view.findViewById(R.id.spinner);
         customText = (EditText) view.findViewById(R.id.customText);
-
-        spinner.setAdapter(new SpinnerAdapter(getContext(), getResources().getStringArray(R.array.spinner_items)));
 
         // hide placeholder text and show spinner items
         placeholderText.setOnClickListener(new OnClickListener() {
@@ -104,9 +108,24 @@ public class CompoundSpinner extends FrameLayout {
         });
     }
 
+    private void applyAttributes(AttributeSet attrs) {
+        final TypedArray typedArray = getContext().obtainStyledAttributes(attrs, R.styleable.CompoundSpinner);
+        final CharSequence[] textArray = typedArray.getTextArray(R.styleable.CompoundSpinner_android_entries);
+        List<String> items = new ArrayList<>();
+        if (textArray != null) {
+            for (CharSequence textItem : textArray) {
+                items.add(textItem.toString());
+            }
+        } else {
+            throw new IllegalArgumentException("Spinner items not specified: android:entries attribute");
+        }
+        spinner.setAdapter(new SpinnerAdapter(getContext(), items));
+        typedArray.recycle();
+    }
+
     private final class SpinnerAdapter extends ArrayAdapter<String> {
 
-        public SpinnerAdapter(Context context, String[] items) {
+        public SpinnerAdapter(Context context, List<String> items) {
             super(context, R.layout.spinner_item, items);
             setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         }
